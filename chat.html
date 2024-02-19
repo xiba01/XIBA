@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+    <link rel="stylesheet" href="assets/css/chat-style.css">
+    <link rel="icon" href="assets/images/logo-modified.png">
+</head>
+<body>
+
+    <div class="wrapper">
+        <section class="chat-area">
+            <header>
+                <a href="users.html" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+                <img src="assets/images/Logo.jpg" alt="">
+                <div class="details">
+                    <span>XIBA</span>
+                    <p>Active now</p>
+                </div>
+            </header>
+            <div class="chat-box">
+                <div class="chat system-message">
+                    <div class="details">
+                        <p>Your messages with XIBA are secure with end-to-end encryption. Welcome!</p>
+                    </div>
+                </div>
+            </div>
+    
+            <form action="#" class="typing-area" autocomplete="off" onsubmit="sendMessage(event)">
+                <input type="text" name="outgoing_id" value="" hidden>
+                <input type="text" name="incoming_id" value="" hidden>
+                <input type="text" name="message" class="input-field" id="messageInput" placeholder="Type a message here...">
+                <button><img src="assets/images/send logo.png" alt="" width="15px"></button>
+            </form>
+        </section>
+    </div>
+    
+    <script>
+        function sendMessage(event) {
+            event.preventDefault();
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+    
+            removeEncryptionMessage();
+            const newMessageDiv = document.createElement('div');
+            newMessageDiv.classList.add('chat', 'outgoing');
+    
+            const detailsDiv = document.createElement('div');
+            detailsDiv.classList.add('details');
+    
+            const messageParagraph = document.createElement('p');
+            messageParagraph.textContent = message;
+            detailsDiv.appendChild(messageParagraph);
+            newMessageDiv.appendChild(detailsDiv);
+    
+            const chatBox = document.querySelector('.chat-box');
+            chatBox.appendChild(newMessageDiv);
+            messageInput.value = '';
+        }
+    
+        function removeEncryptionMessage() {
+            const encryptionMessage = document.querySelector('.system-message');
+            if (encryptionMessage) {
+                encryptionMessage.remove();
+            }
+        }
+    </script>
+        
+    </body>
+</html>

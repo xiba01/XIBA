@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIBΛ</title>
+    <link rel="stylesheet" href="assets/css/index-style.css">
+    <link rel="icon" href="Images/logo-modified.png">
+</head>
+<body>
+    <div class="logo-container">
+            <a href="assets/videos/Logo-link.mp4" class="logo"><span class="x">X</span><span class="hidden">IBΛ</span></a>
+    </div>
+    
+    <video id="video-background" autoplay loop muted>
+        <source src="assets/videos/off grid bg.mp4" type="video/mp4">
+    </video>
+    
+
+    <div class="navs">
+        <div class="nav">
+            <a href="https://www.linkedin.com/in/mostafa-chiba/" class="linkedin">
+                <img src="assets/images/Linkedin-logo.png" alt="logo not found">
+            </a>
+            <a href="https://github.com/xiba01" class="github">
+                <img src="assets/images/github-logo.png" alt="logo not found">
+            </a>
+            <a href="#" class="twitterx">
+                <img src="assets/images/twitterx-logo.png" alt="logo not found">
+            </a>
+            <a href="#" class="inbox">
+                <img src="assets/images/inbox logo.png" alt="logo not found">
+            </a>
+        </div>
+    
+        <div class="nav2">
+            <a href="https://www.linkedin.com/in/mostafa-chiba/" class="linkedin2">
+                <img src="assets/images/Linkedin-logo-filled.png" alt="logo not found">
+            </a>
+            <a href="https://github.com/xiba01" class="github2">
+                <img src="assets/images/github-logo-filled.png" alt="logo not found">
+            </a>
+            <a href="#" class="twitterx2">
+                <img src="assets/images/twitterx-logo-filled.png" alt="logo not found">
+            </a>
+            <a href="register.html" class="inbox">
+                <img src="assets/images/inbox logo.png" alt="logo not found">
+            </a>
+        </div>
+    </div>
+
+    <div class="image">
+        <video autoplay class="bephomet">
+            <source src="assets/videos/bephomet rotation2.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="main">
+
+        <div class="about-me-animation" id="aboutMeSection">
+            <div class="about-me1">
+                <h1>AB<span class="X-sub">X</span>UT ME</h1>
+            </div>
+            <div class="about-me2">
+                <h1>AB<span class="X-sub">X</span>UT ME</h1>
+            </div>
+        </div>
+        
+
+        
+        <div class="about-me-text">
+            <h1>Howdy!</h1>I'm a newbie in the coding universe, taking my first steps<br>into the magical world of programming. Right now, I'm exploring<br>the ABCs of Python and dipping my toes into the basics of web<br>development. Join me on this fun journey of turning code puzzles<br>into victories!
+            <a href="https://www.linkedin.com/in/mostafa-chiba/"><h1 class="typewriter-text">#CodingNovice</h1></a>
+        </div>
+        <div class="buttons">
+            <button class="button1" id="aboutMeSection">
+                <img src="assets/images/down arrow.png" alt="error" class="arrow">
+            </button>
+            <button class="button2">
+                <img src="assets/images/down arrow.png" alt="error">
+            </button>
+        </div>
+    </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function showServices() {
+        var heading1 = document.querySelector('.about-me-animation .about-me1 h1');
+        var heading2 = document.querySelector('.about-me-animation .about-me2 h1');
+  
+        var newHeading = document.createElement('h1');
+        newHeading.innerHTML = '<span class="X-sub">X</span> SERVICES';
+        newHeading.classList.add('cool-transition');
+        newHeading.style.transform = 'rotate(-90deg)';
+  
+        heading1.parentNode.replaceChild(newHeading.cloneNode(true), heading1);
+        heading2.parentNode.replaceChild(newHeading.cloneNode(true), heading2);
+  
+        var paragraph = document.querySelector('.about-me-text');
+        paragraph.innerHTML = '<h1>Hey there!</h1>I\'ve got a bunch of services just for you. Need cool content,<br>smart marketing, or help with projects? I\'ve got your back! Let\'s<br>team up and make your ideas awesome.';
+        
+        paragraph.classList.add('cool-transition');
+
+        var servicesButton = document.createElement('button');
+        servicesButton.innerHTML = 'Services';
+        servicesButton.classList.add('cool-button');
+        servicesButton.style.padding = '10px 20px';
+        servicesButton.style.backgroundColor = 'transparent';
+        servicesButton.style.color = '#fff';
+        servicesButton.style.border = '2px solid #fff';
+        servicesButton.style.borderRadius = '5px';
+        servicesButton.style.cursor = 'pointer';
+        servicesButton.style.fontFamily = 'Montserrat'; 
+        servicesButton.style.position = 'absolute'; 
+        servicesButton.style.top = '470px';  
+        servicesButton.style.left = '290px'; 
+        servicesButton.style.zIndex = '1000';
+        servicesButton.style.fontSize = '20px';
+
+        servicesButton.onclick = function() {
+          window.location.href = 'services.html';
+        };
+        
+        document.body.appendChild(servicesButton);
+      }
+
+      function resetContent() {
+        var heading1 = document.querySelector('.about-me-animation .about-me1 h1');
+        var heading2 = document.querySelector('.about-me-animation .about-me2 h1');
+
+        heading1.innerHTML = 'ABOUT ME';
+        heading2.innerHTML = 'ABOUT ME';
+
+        var paragraph = document.querySelector('.about-me-text');
+        paragraph.innerHTML = '<h1>Howdy!</h1>I\'m a newbie in the coding universe, taking my first steps<br>into the magical world of programming. Right now, I\'m exploring<br>the ABCs of Python and dipping my toes into the basics of web<br>development. Join me on this fun journey of turning code puzzles<br>into victories!<a href="https://www.linkedin.com/in/mostafa-chiba/"><h1 class="typewriter-text">#CodingNovice</h1></a>';
+        
+        var existingButton = document.querySelector('.cool-button');
+        if (existingButton) {
+          existingButton.parentNode.removeChild(existingButton);
+        }
+      }
+  
+      var button1 = document.querySelector('.button1');
+      button1.addEventListener('click', showServices);
+
+      var button2 = document.querySelector('.button2');
+      button2.addEventListener('click', resetContent);
+    });
+</script>
+
+
+  
+    
+    </div>
+</body>
+</html>
